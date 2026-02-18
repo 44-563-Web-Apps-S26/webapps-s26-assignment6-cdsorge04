@@ -18,6 +18,39 @@
   Villains by Conrad Sorge
 </h1>
 
-
+<form>
+  <label for = "Villain">
+    Funny Man
+  </label>
+  <input type = "password" id = "Villain" value = "Joker">
+  <label for = "villainGuess">
+    Guess the Villain
+  </label>
+  <input type = "text" id ="villainGuess">
+  <button type = "button" onclick = "checkVillain()">
+    Check the guess
+  </button>
+</form>
+<div id = "result">
+Caught: 0 Got Away: 0
+</div>
+<script>
+  var caught = 0;
+  var gotAway = 0;
+  function checkVillain(){
+    var getVillain = document.getElementById("Villain").value;
+    var getGuess = document.getElementById("villainGuess").value;
+    if (getVillain == getGuess){
+      caught++;
+      alert("you caught them!");
+    }
+    else{
+      gotAway++;
+      alert("Maybe next time!");
+    }
+    document.getElementById("result").innerHTML = "Caught: " +
+    caught + " Got Away: " + gotAway;
+  }
+</script>
 </body>
 </html>
