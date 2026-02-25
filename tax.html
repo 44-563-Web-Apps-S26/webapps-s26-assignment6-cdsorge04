@@ -88,7 +88,8 @@ function doTax() {
             if (operations[i].value == "exponent"){
                 result = income ** baseRate;
                 document.getElementById("opResult").innerHTML =
-                    income + " ^ " + baseRate + " = " + result;
+                    income + " to the power of " + baseRate + 
+                    " = " + result;
             }
             if (operations[i].value == "add"){
                 result = income + baseRate;
@@ -98,7 +99,7 @@ function doTax() {
             if (operations[i].value == "mod"){
                 result = income % baseRate;
                 document.getElementById("opResult").innerHTML =
-                    income + " % " + baseRate + " = " + result;
+                    income + "mod" + baseRate + " = " + result;
             }
         }
     }
