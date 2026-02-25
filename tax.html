@@ -33,7 +33,7 @@
 <script>
 function doTax() {
     let income = Number(document.getElementById("Income").value);
-    let cutoff = Number(document.getElementById("Cutoff").value);
+    let cutoff = Number(document.getElementById("CutOff").value);
     let baseRate = Number(document.getElementById("BaseTaxRate").value);
     let extRate = Number(document.getElementById("ExtendedRate").value);
     let taxTable = "";
@@ -61,17 +61,17 @@ function doTax() {
     <label>
         power
     </label> <br>
-    <input type = "radio" id = "operation" value = "exponent"
+    <input type = "radio" name = "operation" value = "exponent"
     onclick = "chooseOp()">
     <label for>
         sum
     </label>
-    <input type = "radio" id = "operation" value = "add" 
+    <input type = "radio" name = "operation" value = "add" 
     onclick = "chooseOp()">
     <label>
         mod
     </label>
-    <input type = "radio" id = "operation" value = "mod"
+    <input type = "radio" name = "operation" value = "mod"
     onclick = "chooseOp()">
 </form>
 <p id = "opResult">
@@ -79,31 +79,30 @@ function doTax() {
 </p>
 <script>
     function chooseOp(){
-        let income = Number(
-            document.getElementById("Income").value);
-        let baseRate = Number(
-            document.getElementById("BaseTaxRate"));
-        let operation = document.getElementById("operation");
-        let result;
-        for (let i = 0; i < operation.length; i++){
-            if (operation[i].value = "exponent"){
+    let income = Number(document.getElementById("Income").value);
+    let baseRate = Number(document.getElementById("BaseTaxRate").value);
+    let operations = document.getElementsByName("operation");
+    let result;
+    for (let i = 0; i < operations.length; i++){
+        if (operations[i].checked){
+            if (operations[i].value == "exponent"){
                 result = income ** baseRate;
-                document.getElementById("opResult").innerHTML = 
-                    income + " by the power of " + baseRate + 
-                    " = " + result;
+                document.getElementById("opResult").innerHTML =
+                    income + " ^ " + baseRate + " = " + result;
             }
-            if (operation[i].value = "add"){
+            if (operations[i].value == "add"){
                 result = income + baseRate;
                 document.getElementById("opResult").innerHTML =
                     income + " + " + baseRate + " = " + result;
             }
-            if (operation[i].value = "mod"){
+            if (operations[i].value == "mod"){
                 result = income % baseRate;
-                document.getElementById("opresult").innerHTML =
-                    income + "mod" + baseRate + " = " + result; 
+                document.getElementById("opResult").innerHTML =
+                    income + " % " + baseRate + " = " + result;
             }
         }
     }
+}
 </script>
 </body>
 </html> 
