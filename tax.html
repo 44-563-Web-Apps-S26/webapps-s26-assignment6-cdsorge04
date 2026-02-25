@@ -32,10 +32,10 @@
 
 <script>
 function doTax() {
-    let income = Number(document.getElementById("income").value);
-    let cutoff = Number(document.getElementById("cutoff").value);
-    let baseRate = Number(document.getElementById("baseRate").value);
-    let extRate = Number(document.getElementById("extRate").value);
+    let income = Number(document.getElementById("Income").value);
+    let cutoff = Number(document.getElementById("Cutoff").value);
+    let baseRate = Number(document.getElementById("BaseTaxRate").value);
+    let extRate = Number(document.getElementById("ExtendedRate").value);
     let taxTable = "";
     for (let i = 1; i <= 5; i++) {
         let incomeLevel = i * income;
@@ -46,7 +46,7 @@ function doTax() {
             tax = (cutoff * baseRate) +
                   ((incomeLevel - cutoff) * extRate);
         }
-        taxTable += "incomeLevel " + incomeLevel +
+        taxTable += "Income level " + incomeLevel +
                     " is " + tax + "; ";
     }
     document.getElementById("result").innerHTML =
@@ -54,5 +54,56 @@ function doTax() {
 }
 </script>
 
+<h2>
+    Operations
+</h2>
+<form>
+    <label>
+        power
+    </label> <br>
+    <input type = "radio" id = "operation" value = "exponent"
+    onclick = "chooseOp()">
+    <label for>
+        sum
+    </label>
+    <input type = "radio" id = "operation" value = "add" 
+    onclick = "chooseOp()">
+    <label>
+        mod
+    </label>
+    <input type = "radio" id = "operation" value = "mod"
+    onclick = "chooseOp()">
+</form>
+<p id = "opResult">
+    Operation Result here
+</p>
+<script>
+    function chooseOp(){
+        let income = Number(
+            document.getElementById("Income").value);
+        let baseRate = Number(
+            document.getElementById("BaseTaxRate"));
+        let operation = document.getElementById("operation");
+        let result;
+        for (let i = 0; i < operation.length; i++){
+            if (operation[i].value = "exponent"){
+                result = income ** baseRate;
+                document.getElementById("opResult").innerHTML = 
+                    income + " by the power of " + baseRate + 
+                    " = " + result;
+            }
+            if (operation[i].value = "add"){
+                result = income + baseRate;
+                document.getElementById("opResult").innerHTML =
+                    income + " + " + baseRate + " = " + result;
+            }
+            if (operation[i].value = "mod"){
+                result = income % baseRate;
+                document.getElementById("opresult").innerHTML =
+                    income + "mod" + baseRate + " = " + result; 
+            }
+        }
+    }
+</script>
 </body>
 </html> 
