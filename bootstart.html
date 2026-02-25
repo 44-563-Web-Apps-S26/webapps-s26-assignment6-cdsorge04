@@ -62,10 +62,6 @@ Caught: 0 Got Away: 0
   function updatePic(){
     let pic = document.getElementById("Tree");
     switch(usePic){
-      case 1:
-        pic.src = "sprucetree.jpg";
-        usePic = 1;
-        break;
       case 2:
         pic.src = "oaktree.jpg";
         usePic = 2;
@@ -73,6 +69,10 @@ Caught: 0 Got Away: 0
       case 3:
         pic.src = "ginkotree.jpg";
         usePic = 3;
+        break;
+      case 1:
+        pic.src = "sprucetree.jpg";
+        usePic = 1;
         break;
     }
   }
