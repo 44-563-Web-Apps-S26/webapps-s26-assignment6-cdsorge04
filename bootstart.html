@@ -52,5 +52,30 @@ Caught: 0 Got Away: 0
     caught + " Got Away: " + gotAway;
   }
 </script>
+
+<div class = "container">
+  <img id = "Tree" src = "sprucetree.jpg" width = "150"
+  height = "150" onclick = "updatepic()">
+</div>
+<script>
+  let usePic = 1;
+  function updatePic(){
+    let pic = document.getElementById("Tree");
+    switch(usePic){
+      case 1:
+        pic.src = "sprucetree.jpg";
+        usePic = 1;
+        break;
+      case 2:
+        pic.src = "oaktree.jpg";
+        usePic = 2;
+        break;
+      case 3:
+        pic.src = "ginkotree.jpg";
+        usePic = 3;
+        break;
+    }
+  }
+</script>
 </body>
 </html>
