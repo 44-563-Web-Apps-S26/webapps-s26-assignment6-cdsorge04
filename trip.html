@@ -24,6 +24,21 @@
 
 
 <p id="result">Trip Selection will appear here</p>
+<h3>
+Trip Route
+</h3>
+<form>
+    <label for = "startcity">
+        Enter starting city
+    </label>
+    <input type = "text" id ="startcity" value = "athens">
+    <label for = "endcity">
+        Enter ending city
+    </label>
+    <input type = "text" id = "endcity">
+    <input type = "button" value = "Update the trip" 
+    onclick = updateTrip()>
+</form>
 
 <script> 
 let my_trip = {};
@@ -33,6 +48,15 @@ function choices(){
     my_trip.medi = 
         document.getElementById("mediterranean").checked;
     my_trip.balt = document.getElementById("baltic").checked;
+    document.getElementById("result").innerHTML = 
+        JSON.stringify(my_trip);
+}
+
+function updateTrip(){
+    let start = document.getElementById("startcity").value;
+    let end = document.getElementById("endcity").value;
+    my_trip["startcity"] = start;
+    my_trip["endcity"] = end;
     document.getElementById("result").innerHTML = 
         JSON.stringify(my_trip);
 }
