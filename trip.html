@@ -15,9 +15,9 @@
     <input type ="checkbox" id="mediterranean" value = "True"> <br>
 
     <label for = "baltic">
-
+        Baltic
     </label>
-    <input type = "checkbox" id = "baltic" value = "false">
+    <input type = "checkbox" id = "baltic" value = "False">
     <input type="button" onclick="choices()" 
     value="Cruise Choices">
 </form>
@@ -27,9 +27,9 @@
 
 <script> 
 let my_trip = {};
-function resolveForm (){
+function choices(){
     my_trip = {};
-    my_trip.cari = document.getElementById("caribbean").checked;
+    my_trip.cari = document.getElementById("caribbian").checked;
     my_trip.medi = 
         document.getElementById("mediterranean").checked;
     my_trip.balt = document.getElementById("baltic").checked;
