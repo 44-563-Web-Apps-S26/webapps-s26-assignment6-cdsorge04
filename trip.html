@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+ <Title>
+    Conrad Sorge Travel Planner
+ </Title>
+<body>
+
+<h2>Conrad Sorge Travel Planner</h2>
+
+<form>
+    <label for="caribbian">Caribbian</label>
+    <input type ="checkbox" id="caribbian" value="True"> <br>
+
+    <label for="mediterranean">Mediterranean</label>
+    <input type ="checkbox" id="mediterranean" value = "True"> <br>
+
+    <label for = "baltic">
+
+    </label>
+    <input type = "checkbox" id = "baltic" value = "false">
+    <input type="button" onclick="choices()" 
+    value="Cruise Choices">
+</form>
+
+
+<p id="result">Trip Selection will appear here</p>
+
+<script> 
+let my_trip = {};
+function resolveForm (){
+    my_trip = {};
+    my_trip.cari = document.getElementById("caribbean").checked;
+    my_trip.medi = 
+        document.getElementById("mediterranean").checked;
+    my_trip.balt = document.getElementById("baltic").checked;
+    document.getElementById("result").innerHTML = 
+        JSON.stringify(my_trip);
+}
+</script>
+
+</body>
+</html> 
